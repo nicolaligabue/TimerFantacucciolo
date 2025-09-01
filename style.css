@@ -1,0 +1,106 @@
+/* ===== Reset e base ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* niente scroll */
+    user-select: none;
+    color: orange;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    background-color: black;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* ===== Container principale ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    gap: 30px; /* spazio tra input, titolo e timer */
+}
+
+/* ===== Input e bottone ===== */
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+input[type="text"]{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input[type="text"]:focus{
+    border-color: orange;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+button{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover{
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ===== Titolo e timer ===== */
+h1{
+    font-size: 50px;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+#timer{
+    font-size: 100px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ===== Animazioni ===== */
+.blink-timer {
+  animation: timer-blink-color 1s infinite alternate;
+}
+
+.blink-container {
+  animation: container-blink-color 1s infinite alternate;
+}
+
+@keyframes timer-blink-color {
+  0% {
+    color: black;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes container-blink-color {
+  0% {
+    border: 10px solid white;
+  }
+  100% {
+    border: 10px solid red;
+  }
+}
