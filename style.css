@@ -1,9 +1,8 @@
-/* ===== Reset e base ===== */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* niente scroll */
+    overflow: hidden;
     user-select: none;
     color: orange;
     box-sizing: border-box;
@@ -15,7 +14,6 @@ html, body {
     box-sizing: inherit;
 }
 
-/* ===== Container principale ===== */
 .container {
     display: flex;
     flex-direction: column;
@@ -23,10 +21,9 @@ html, body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    gap: 30px; /* spazio tra input, titolo e timer */
+    gap: 30px;
 }
 
-/* ===== Input e bottone ===== */
 .input {
     display: flex;
     flex-direction: column;
@@ -64,7 +61,6 @@ button:hover{
     transform: scale(1.05);
 }
 
-/* ===== Titolo e timer ===== */
 h1{
     font-size: 50px;
     font-family: Roboto, sans-serif;
@@ -78,13 +74,12 @@ h1{
     margin: 0;
 }
 
-/* ===== Animazioni ===== */
-.blink-timer {
+.blink-timer-slow {
   animation: timer-blink-color 1s infinite alternate;
 }
 
-.blink-container {
-  animation: container-blink-color 1s infinite alternate;
+.blink-timer-faster {
+  animation: timer-blink-color 0.25s infinite alternate;
 }
 
 @keyframes timer-blink-color {
@@ -93,14 +88,5 @@ h1{
   }
   100% {
     color: red;
-  }
-}
-
-@keyframes container-blink-color {
-  0% {
-    border: 10px solid white;
-  }
-  100% {
-    border: 10px solid red;
   }
 }

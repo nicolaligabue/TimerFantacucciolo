@@ -1,7 +1,6 @@
 let countdown; 
 let duration = 5 * 60; // 5 minuti in secondi
 let remaining = duration;
-let isBlinking = false;
 
 const input = document.getElementById("timer-input");
 const button = document.getElementById("buttonSetTimer");
@@ -22,19 +21,24 @@ function startCountdown() {
         updateDisplay(remaining);
 
         if(remaining > 10){
-            document.getElementById("timer").classList.remove("blink-timer");
-            isBlinking = false;
+            document.getElementById("timer").classList.remove("blink-timer-slow");
+            document.getElementById("timer").classList.remove("blink-timer-faster");
         }
-        else if(remaining <= 10 && !isBlinking){
-            document.getElementById("timer").classList.add("blink-timer");
-            isBlinking = true;
+        
+        if(remaining <= 10){
+            if(remaining <= 5){
+                document.getElementById("timer").classList.add("blink-timer-faster");
+            }
+            else{
+                document.getElementById("timer").classList.add("blink-timer-slow");    
+            }
         }
 
-        if (remaining <= 0) {
+        if (remaining <= 0){
             clearInterval(countdown);
-            alert("Tempo scaduto!");
-            document.getElementById("timer").classList.remove("blink-timer");
-            isBlinking = false;
+            audioTimerEnd();
+            document.getElementById("timer").classList.remove("blink-timer-slow");
+            document.getElementById("timer").classList.remove("blink-timer-faster");
         }
     }, 1000);
 }
@@ -61,6 +65,15 @@ document.addEventListener("touchstart", function(event){
     startCountdown(remaining);
 });
 
+function startIntroSound(){
+    var audio = new Audio('sounds/intro.mp3');
+    audio.play();
+}
 
-//avvia subito il primo countdown
+function audioTimerEnd(){
+    var audio = new Audio('sounds/timer_end.mp3');
+    audio.play();
+}
+
+startIntroSound();
 startCountdown();
