@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <meta charset="utf-8" />
     <title>Timer Fantacucciolo</title>
     <link rel="stylesheet" href="style.css" />
-
   </head>
   <body>
-    <div id="container" class="container" onclick="startCountdown()">
-
-      <h1>IL TIMER VARIABILE</h1>
-      <h1>DEL FANTACUCCIOLO</h1>
+    <div id="container" class="container" onclick="rilancia()">
+      <!-- <h1>TIMER LOW-COST</h1>
+      <h1>DEL FANTACALCIO</h1> -->
       <div id="timer">05:00</div>
 
       <div class="input">
-        <input type="text" id="timer-input" placeholder="Inserire secondi">
+        <input type="text" id="timer-input" placeholder="Inserire secondi" />
         <button id="buttonSetTimer">Imposta</button>
       </div>
 
-
+      <div class="description">
+        <p>Imposta il countdown iniziale in secondi una sola volta.</p>
+        <p>
+          Puoi ripristinare e far ripartire il timer cliccando in qualsiasi
+          punto della pagina o premendo un qualsiasi pulsante della tastiera,
+          sia alla scadenza del countdown che in caso di rilancio dell'asta.
+        </p>
+      </div>
     </div>
 
     <script src="scripts.js"></script>
-  </body>
 
+    <div class="instagram-link">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        alt="Instagram"
+      />
+      <a href="https://www.instagram.com/nicolaligabue/" target="_blank"
+        >nicolaligabue</a
+      >
+    </div>
+  </body>
 </html>

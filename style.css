@@ -1,77 +1,93 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    user-select: none;
-    color: orange;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    background-color: black;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  color: orange;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  background-color: black;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  gap: 30px;
 }
 
 .input {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
 }
 
-input[type="text"]{
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    outline: none;
-    transition: all 0.2s;
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: all 0.2s;
 }
 
-input[type="text"]:focus{
-    border-color: orange;
-    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+input[type="text"]:focus {
+  border-color: orange;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-button{
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: none;
-    background-color: orange;
-    color: black;
-    cursor: pointer;
-    transition: all 0.2s;
+p {
+  width: 50%;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 20px;
 }
 
-button:hover{
-    background-color: #0056b3;
-    transform: scale(1.05);
+div .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1{
-    font-size: 50px;
-    font-family: Roboto, sans-serif;
-    margin: 0;
+button {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: orange;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-#timer{
-    font-size: 100px;
-    font-family: Roboto, sans-serif;
-    font-weight: 700;
-    margin: 0;
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 50px;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+#timer {
+  font-size: 200px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  margin: 0;
 }
 
 .blink-timer-slow {
@@ -89,4 +105,33 @@ h1{
   100% {
     color: red;
   }
+}
+
+.instagram-link {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: orange;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.instagram-link img {
+  width: 28px;
+  height: 28px;
+}
+
+.instagram-link a {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.instagram-link a:hover {
+  color: #ff8c00;
 }
