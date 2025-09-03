@@ -9,7 +9,6 @@ function updateDisplay(seconds) {
 }
 
 function rilancia() {
-  audioTimerEnd();
   startCountdown();
 }
 
@@ -67,14 +66,15 @@ document.addEventListener("touchstart", function (event) {
   rilancia(remaining);
 });
 
-// function startIntroSound(){
-//     var audio = new Audio('sounds/intro.mp3');
-//     audio.play();
-// }
+function startIntroSound(){
+    var audio = new Audio('sounds/intro.mp3');
+    audio.play();
+}
 
 function audioTimerEnd() {
   var audio = new Audio("sounds/timer_end.mp3");
   audio.play();
 }
 
+/*startIntroSound();*/
 startCountdown();
